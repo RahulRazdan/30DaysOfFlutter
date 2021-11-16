@@ -1,0 +1,17 @@
+import 'package:flutter/material.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+  final String app = "First App :)";
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("First App")),
+      body: Center(
+        child: Text("Welcome To My $app"),
+      ),
+      drawer: const Drawer(),
+    );
+  }
+}
