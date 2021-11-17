@@ -9,15 +9,25 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: ListTile(
-        leading: Image.asset(item.image),
-        title: Text(item.name),
-        subtitle: Text(item.desc),
-        trailing: Text(
-          "\$${item.price.toString()}",
-          textScaleFactor: 1.5,
-          style:
-              const TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: GridTile(
+        header: Container(
+          child: Text(
+            item.name,
+            style: const TextStyle(color: Colors.black),
+          ),
+          decoration: const BoxDecoration(color: Colors.amber),
+          padding: const EdgeInsets.all(12),
+        ),
+        child: Image.asset(item.image),
+        footer: Container(
+          child: Text(
+            item.desc,
+            style: const TextStyle(color: Colors.black),
+          ),
+          decoration: const BoxDecoration(color: Colors.amber),
+          padding: const EdgeInsets.all(12),
         ),
       ),
     );

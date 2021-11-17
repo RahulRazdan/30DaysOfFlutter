@@ -36,7 +36,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(title: const Text("Billu App")),
       body: (BilluModel.items != null && BilluModel.items.isNotEmpty)
-          ? ListView.builder(
+          ? GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, mainAxisSpacing: 16, crossAxisSpacing: 16),
               itemCount: BilluModel.items.length,
               itemBuilder: (context, index) {
                 return ItemWidget(item: BilluModel.items[index]);
