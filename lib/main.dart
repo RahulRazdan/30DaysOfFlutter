@@ -3,7 +3,6 @@ import 'package:flutter_application/pages/login_page.dart';
 import 'package:flutter_application/utils/routes.dart';
 import 'package:flutter_application/widgets/themes.dart';
 import 'pages/home_page.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
