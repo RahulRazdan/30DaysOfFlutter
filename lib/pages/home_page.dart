@@ -9,9 +9,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Billu App")),
-      body: Center(
-        child: Text("Welcome To My $app"),
-      ),
+      body: Center(child: Text("Welcome To My $app")),
+      backgroundColor: Colors.amberAccent,
       drawer: const MyDrawer(),
     );
   }
