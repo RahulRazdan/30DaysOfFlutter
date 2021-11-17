@@ -1,5 +1,5 @@
 class Item {
-  final String id;
+  final int id;
   final String name;
   final String desc;
   final num price;
@@ -9,7 +9,9 @@ class Item {
   Item(this.id, this.name, this.desc, this.price, this.color, this.image);
 }
 
-final billus = [
-  Item(
-      "1", "HappyBillu", "Ate sweets", 999, "#fff", "assets/images/profile.jpg")
-];
+class BilluModel {
+  static final items = [
+    Item(1, "HappyBillu", "want sweets", 999, "#fff",
+        "assets/images/profile.jpg")
+  ];
+}
