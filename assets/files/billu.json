@@ -1,0 +1,20 @@
+{
+    "items":[
+    {
+        "id":1, 
+        "name":"HappyBillu", 
+        "desc":"want sweets", 
+        "price":999, 
+        "color":"#fff",
+        "image":"assets/images/profile.jpg"
+    },
+    {
+        "id":2, 
+        "name":"DancingBillu", 
+        "desc":"Play songs", 
+        "price":1999, 
+        "color":"#fff",
+        "image":"assets/images/profile.jpg"
+    }
+]
+}

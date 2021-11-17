@@ -7,11 +7,22 @@ class Item {
   final String image;
 
   Item(this.id, this.name, this.desc, this.price, this.color, this.image);
+
+  factory Item.forMap(Map<String, dynamic> map) {
+    return Item(map["id"], map["name"], map["desc"], map["price"], map["color"],
+        map["image"]);
+  }
+
+  toMap() => {
+        "id": id,
+        "name": name,
+        "desc": desc,
+        "price": price,
+        "color": color,
+        "image": image
+      };
 }
 
 class BilluModel {
-  static final items = [
-    Item(1, "HappyBillu", "want sweets", 999, "#fff",
-        "assets/images/profile.jpg")
-  ];
+  static var items = [];
 }
