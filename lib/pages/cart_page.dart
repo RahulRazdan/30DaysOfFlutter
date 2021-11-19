@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application/core/store.dart';
 import 'package:flutter_application/models/cart.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -22,16 +23,10 @@ class CartPage extends StatelessWidget {
   }
 }
 
-class _CartList extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() => __CartListState();
-}
-
-class __CartListState extends State<_CartList> {
-  final _cart = CartModel();
-
+class _CartList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final CartModel _cart = (VxState.store as MyStore).cart;
     return _cart.items.isEmpty
         ? "Nothing to show".text.xl3.makeCentered()
         : ListView.builder(
@@ -43,7 +38,7 @@ class __CartListState extends State<_CartList> {
                           icon: const Icon(Icons.remove_circle_outline),
                           onPressed: () {
                             _cart.remove(_cart.items[index]);
-                            setState(() {});
+                            //setState(() {});
                           })),
                 ),
             itemCount: _cart.items.length);
@@ -51,10 +46,9 @@ class __CartListState extends State<_CartList> {
 }
 
 class _CartTotal extends StatelessWidget {
-  final _cart = CartModel();
-
   @override
   Widget build(BuildContext context) {
+    final CartModel _cart = (VxState.store as MyStore).cart;
     return SizedBox(
       height: 200,
       child: Row(

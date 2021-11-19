@@ -24,12 +24,6 @@ class Item {
 }
 
 class BilluModel {
-  static final bModel = BilluModel._internal();
-
-  BilluModel._internal();
-
-  factory BilluModel() => bModel;
-
   static var items = [];
 
   Item getById(int id) =>
