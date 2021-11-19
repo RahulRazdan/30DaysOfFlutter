@@ -9,7 +9,7 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(backgroundColor: Colors.transparent),
       bottomNavigationBar: ButtonBar(
         alignment: MainAxisAlignment.spaceBetween,
         buttonPadding: EdgeInsets.zero,
@@ -27,7 +27,7 @@ class HomeDetailPage extends StatelessWidget {
                       shape: MaterialStateProperty.all(const StadiumBorder())))
               .wh(100, 50)
         ],
-      ).p32(),
+      ).p24(),
       backgroundColor: Colors.amber.shade100,
       body: SafeArea(
           bottom: false,
@@ -50,8 +50,13 @@ class HomeDetailPage extends StatelessWidget {
                               .xl
                               .make(),
                           10.heightBox,
+                          "Mera naam hai ek billu , ek billu baba ek billu"
+                              .text
+                              .textStyle(context.captionStyle!)
+                              .make()
+                              .p16()
                         ],
-                      ).py64(),
+                      ).py32(),
                     )))
           ])),
     );

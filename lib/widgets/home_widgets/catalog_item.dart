@@ -30,7 +30,7 @@ class CatalogItem extends StatelessWidget {
                 "\$${catalogItem.price}".text.bold.xl.make(),
                 ElevatedButton(
                     onPressed: () {},
-                    child: "Buy".text.make(),
+                    child: "Add to cart".text.make(),
                     style: ButtonStyle(
                         shape:
                             MaterialStateProperty.all(const StadiumBorder())))
