@@ -25,4 +25,8 @@ class Item {
 
 class BilluModel {
   static var items = [];
+
+  Item getById(int id) =>
+      items.firstWhere((element) => element.id == id, orElse: () => null);
+  static Item getByPosition(int position) => items[position];
 }

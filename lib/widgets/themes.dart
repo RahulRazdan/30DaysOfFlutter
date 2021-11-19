@@ -11,5 +11,11 @@ class MyTheme {
         backgroundColor: Colors.amberAccent,
       ));
 
-  static ThemeData get darkTheme => ThemeData(brightness: Brightness.dark);
+  static ThemeData get darkTheme => ThemeData(
+      primarySwatch: Colors.amber,
+      fontFamily: GoogleFonts.poppins().fontFamily,
+      appBarTheme: const AppBarTheme(
+        elevation: 0.0,
+        backgroundColor: Colors.amberAccent,
+      ));
 }
