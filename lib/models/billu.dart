@@ -24,9 +24,15 @@ class Item {
 }
 
 class BilluModel {
+  static final bModel = BilluModel._internal();
+
+  BilluModel._internal();
+
+  factory BilluModel() => bModel;
+
   static var items = [];
 
   Item getById(int id) =>
-      items.firstWhere((element) => element.id == id, orElse: () => null);
+      items.firstWhere((element) => element.id == id, orElse: null);
   static Item getByPosition(int position) => items[position];
 }

@@ -1,6 +1,12 @@
 import 'package:flutter_application/models/billu.dart';
 
 class CartModel {
+  static final cartModel = CartModel._internal();
+
+  CartModel._internal();
+
+  factory CartModel() => cartModel;
+
   late BilluModel _billuModel;
   final List<int> _itemIds = [];
 
