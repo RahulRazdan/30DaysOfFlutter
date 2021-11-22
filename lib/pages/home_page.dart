@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
             builder: (context, _, __) {
               return FloatingActionButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, MyRoutes.cartRoute);
+                  context.vxNav.push(Uri.parse(MyRoutes.cartRoute));
                 },
                 child: const Icon(CupertinoIcons.cart),
               ).badge(
