@@ -3,7 +3,9 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application/core/store.dart';
 import 'package:flutter_application/models/billu.dart';
+import 'package:flutter_application/models/cart.dart';
 import 'package:flutter_application/utils/routes.dart';
 import 'package:flutter_application/widgets/home_widgets/catalog_header.dart';
 import 'package:flutter_application/widgets/home_widgets/catalog_list.dart';
@@ -35,14 +37,23 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     //final dummyList = List.generate(10, (index) => BilluModel.items[0]);
-
+    final _cart = (VxState.store as MyStore).cart;
     return Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.pushNamed(context, MyRoutes.cartRoute);
-          },
-          child: const Icon(CupertinoIcons.cart),
-        ),
+        floatingActionButton: VxBuilder(
+            mutations: const {AddMutation, RemoveMutation},
+            builder: (context, _, __) {
+              return FloatingActionButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, MyRoutes.cartRoute);
+                },
+                child: const Icon(CupertinoIcons.cart),
+              ).badge(
+                  color: Colors.red,
+                  size: 22,
+                  count: _cart.items.length,
+                  textStyle:
+                      const TextStyle(fontSize: 13, color: Colors.white));
+            }),
         body: SafeArea(
           child: Container(
             padding: Vx.m32,
